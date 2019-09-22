@@ -1,5 +1,6 @@
 export class Table {
-    id: number;
+    // id: number;
+    customer_name: string;
     occupied: boolean;
     visited: boolean;
 }

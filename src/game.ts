@@ -1,5 +1,6 @@
 import { Restaurant } from "./restaurant";
 import { Table } from "./table";
+import { Customer } from "./customer";
 
 let res = new Restaurant();
 res.name = "Cosmic Cantina";
@@ -7,6 +8,18 @@ res.full = false;
 res.capacity = 40;
 for (let i = 0; i < 10; i++) {
     res.tables[i] = new Table();
+}
+
+let cus = new Customer();
+cus.name = "Smith Family";
+cus.party_size = 4;
+cus.seated = false;
+
+if (!res.full) {
+    // seat at first open table
+    res.tables[0].customer_name = cus.name;
+    res.tables[0].occupied = true;
+    res.tables[0].visited = false;
 }
 // import * as ex from 'excalibur';
 
